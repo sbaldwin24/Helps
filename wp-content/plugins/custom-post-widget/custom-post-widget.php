@@ -3,14 +3,14 @@
  Plugin Name: Custom Post Widget
  Plugin URI: http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget or with a shortcode.
- Version: 2.4.5
+ Version: 2.5.7
  Author: Johan van der Wijk
  Author URI: http://www.vanderwijk.com
  License: GPL2
 
- Release notes: Version 2.4.5 javaScript fix for inserting shortcode
+ Release notes: Version 2.5 adds the content block information column to the overview page
  
- Copyright 2013 Johan van der Wijk (email: info@vanderwijk.com)
+ Copyright 2014 Johan van der Wijk (email: info@vanderwijk.com)
  
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License, version 2, as 
@@ -38,8 +38,9 @@ function custom_post_widget_plugin_init() {
 
 // Loads the widgets packaged with the plugin.
 function custom_post_widget_load_widgets() {
-	require( 'post-widget.php' );
+	require_once( 'post-widget.php' );
 	register_widget( 'custom_post_widget' );
 }
 
-require( 'meta-box.php' );
+require_once( 'meta-box.php' );
+require_once( 'popup.php' );
